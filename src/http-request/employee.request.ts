@@ -23,6 +23,9 @@ export const getEmployees = () => {
 export const getEmployeeById: (id: number) => Promise<EmployeeModel> = (id)  => {
     return new Promise((resolve, reject) => {
         const found = data.find((employee) => employee.id == id)
-        resolve(found as EmployeeModel)
+        setTimeout(() => {
+          resolve(found as EmployeeModel)
+        }, 1000)
+        
     })
 }
