@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
+import LeaveTable from '../../components/leaves'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
@@ -27,6 +28,7 @@ const EmployeePage: NextPage = () => {
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
+      <LeaveTable/>
     </>
   )
 }

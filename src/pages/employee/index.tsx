@@ -5,6 +5,7 @@ import { Layout, Table, Col, Row, Button } from 'antd'
 import { useEffect, useState } from 'react'
 import { Employee, EmployeeModel, GenderEnum } from '../../types/types'
 import { getEmployees } from '../../http-request/employee.request'
+import ActionBar from '../../components/actionbar'
 
 const { Sider, Content } = Layout
 
@@ -56,6 +57,7 @@ const EmployeePage: NextPage = () => {
         enim, minima odit neque minus at assumenda qui nobis incidunt illo culpa
         autem, nulla reiciendis cumque doloremque, accusantium quis? Minus,
         enim.
+        <ActionBar/>
       </Sider>
       <Layout>
         <Content style={{ padding: '20px' }}>
@@ -69,6 +71,7 @@ const EmployeePage: NextPage = () => {
               <Table dataSource={employees} columns={columns} />{' '}
             </Col>
           </Row>
+          
         </Content>
       </Layout>
     </>
