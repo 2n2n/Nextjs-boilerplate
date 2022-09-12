@@ -1,3 +1,4 @@
+import { Button, Form, Input } from "antd"
 import { NextPage } from "next"
 import { useRouter } from 'next/router'
 import { useEffect, useState } from "react"
@@ -17,7 +18,15 @@ const EmployeePage: NextPage = () => {
 
     return (
         <>
-            <h1>Hello world! with {JSON.stringify(data)}</h1>
+            {/* <h1>Hello world! with {JSON.stringify(data)}</h1> */}
+            <div style={{padding: '20px'}}>
+                <Form onFinish={(values)=>console.log('@OnFinish',values)}>
+                    <Form.Item label='' name="">
+                        <Input/>
+                    </Form.Item>
+                    <Button htmlType="submit">Submit</Button>
+                </Form>
+            </div>
         </>
     )
 }
