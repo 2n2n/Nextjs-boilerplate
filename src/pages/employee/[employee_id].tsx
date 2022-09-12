@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
+import SchedulingComponent from '../../components/SchedulingComponent'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
@@ -24,6 +25,7 @@ const EmployeePage: NextPage = () => {
             <Input />
           </Form.Item>
           <SubComponent />
+          <SchedulingComponent />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>

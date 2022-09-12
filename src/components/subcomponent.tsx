@@ -1,4 +1,5 @@
-import { Form, Input } from 'antd'
+import { Form, Input, Radio } from 'antd'
+import SchedulingComponent from './SchedulingComponent'
 import SelectSubComponent from './selectSubComponent'
 
 const fields = [
@@ -13,8 +14,11 @@ const SubComponent = () => {
         <Input />
       </Form.Item>
       { fields.map((field, key) => <SelectSubComponent {...field} key={key}/>)}
+
+      
     </>
   )
 }
 
+SchedulingComponent
 export default SubComponent
