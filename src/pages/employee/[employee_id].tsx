@@ -1,10 +1,11 @@
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, Radio, Space } from 'antd'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
+import SchedulingComponent from '../../components/schedulingComponent'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
@@ -24,6 +25,9 @@ const EmployeePage: NextPage = () => {
             <Input />
           </Form.Item>
           <SubComponent />
+
+          <SchedulingComponent />
+
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
