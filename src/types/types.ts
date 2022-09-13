@@ -8,6 +8,13 @@ export type Employee = {
     gender: GenderEnum
 }
 
-export type EmployeeModel = Employee & { 
-    id: number
+export type EmployeeModel = Employee & {
+  employeeId?: string
+  photo?: string
+  id: number
+}
+
+export type EmployeeAvatar = EmployeeModel & { 
+    employeeId: string
+    photo?: string
 }

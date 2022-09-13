@@ -3,8 +3,9 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
-import { EmployeeModel } from '../../types/types'
+import { EmployeeAvatar, EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
+import { UploadComponent } from '../../components/upload'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
@@ -14,17 +15,19 @@ const EmployeePage: NextPage = () => {
     const employee_id = router.query.employee_id
     const id = parseInt(employee_id as string)
     getEmployeeById(id).then((e: EmployeeModel) => setData(e))
-  }, [])
+  }, [router.query.employee_id])
 
   return (
     <>
+    {/* {JSON.stringify(data)} */}
       <div style={{ padding: '20px' }}>
         <Form onFinish={(values) => console.log('@onFinish', values)}>
-          <Form.Item label="name" name="name">
+          {/* <Form.Item label="name" name="name">
             <Input />
-          </Form.Item>
-          <SubComponent />
-          <Button htmlType="submit">Submit</Button>
+          </Form.Item> */}
+          {/* <SubComponent /> */}
+          {/* <Button htmlType="submit">Submit</Button> */}
+          <UploadComponent employeeId={data?.employeeId}/>
         </Form>
       </div>
     </>
