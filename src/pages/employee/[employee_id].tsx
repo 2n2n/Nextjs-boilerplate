@@ -1,4 +1,4 @@
-import { Form, Input, Button, Radio, Space } from 'antd'
+import { Form, Input, Button, Radio, Space, Row, Col } from 'antd'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -18,20 +18,19 @@ const EmployeePage: NextPage = () => {
   }, [])
 
   return (
-    <>
-      <div style={{ padding: '20px' }}>
-        <Form onFinish={(values) => console.log('@onFinish', values)}>
-          <Form.Item label="name" name="name">
-            <Input />
-          </Form.Item>
-          <SubComponent />
-
+    <Form onFinish={(values) => console.log('@onFinish', values)}>
+      <Row gutter={10} style={{ padding: '20px' }}>
+        <Col span={5}>
           <SchedulingComponent />
-
-          <Button htmlType="submit">Submit</Button>
-        </Form>
-      </div>
-    </>
+        </Col>
+        <Col span={18}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid impedit at vero eveniet alias asperiores doloribus placeat modi quisquam explicabo officia quaerat nobis veniam aperiam repudiandae similique expedita, pariatur repellat.
+        </Col>
+        <Col span={1}>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut possimus error corrupti tempora ipsa aliquid, perspiciatis velit quo quas, asperiores inventore doloremque dicta magni voluptate, at animi amet earum consequuntur!
+        </Col>
+      </Row>
+    </Form>
   )
 }
 export default EmployeePage
