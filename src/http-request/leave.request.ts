@@ -35,7 +35,9 @@ export const getLeaveCredits = () => {
   })
 }
 
-export const getLeaveById: (id: number) => Promise<EmployeeLeave> = (id) => {
+export const getLeaveCreditsByEmployeeId: (
+  id: number
+) => Promise<EmployeeLeave> = (id) => {
   return new Promise((resolve, reject) => {
     const found = leaveData.find(
       (employeeLeave) => employeeLeave.employeeId === id
