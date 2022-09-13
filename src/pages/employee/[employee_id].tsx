@@ -9,6 +9,17 @@ import { UploadComponent } from '../../components/upload'
 
 import SchedulingComponent from '../../components/schedulingComponent'
 import SidePanel from '../../components/sidePanel'
+import FormTest from '../form/form-test'
+
+const formItemLayout = {
+  labelCol: {
+    sm: { span: 24 },
+  },
+  wrapperCol: {
+    sm: { span: 24 },
+  },
+}
+
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
   const router = useRouter()
@@ -20,14 +31,14 @@ const EmployeePage: NextPage = () => {
   }, [router.query.employee_id])
 
   return (
-    <Form onFinish={(values) => console.log('@onFinish', values)}>
+    <Form onFinish={(values) => console.log('@onFinish', values)} {...formItemLayout}>
       <Row gutter={10} style={{ padding: '20px' }}>
         <Col span={5}>
           <UploadComponent employeeId={data?.employeeId}/>
           <SchedulingComponent />
         </Col>
-        <Col span={17}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid impedit at vero eveniet alias asperiores doloribus placeat modi quisquam explicabo officia quaerat nobis veniam aperiam repudiandae similique expedita, pariatur repellat.
+        <Col span={17} style={{  background: '#fff', padding: "20px 20px"}}>
+        <FormTest />
         </Col>
         <Col span={2}>
           <SidePanel />

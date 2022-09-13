@@ -4,22 +4,11 @@ import { addressFields, addressType } from '../../constant/constant'
 
 const { Paragraph, Title } = Typography
 
-const formItemLayout = {
-  labelCol: {
-    sm: { span: 24 },
-  },
-  wrapperCol: {
-    sm: { span: 24 },
-  },
-}
 const FormTest = () => {
   const { Residential, Permanent } = addressType
 
   return (
     <div>
-      <Form {...formItemLayout}>
-        {/* Personal Info Component */}
-
         <Row gutter={10}>
           <Col span={5}>
             <Form.Item
@@ -194,9 +183,6 @@ const FormTest = () => {
             </Form.Item>
           </Col>
         </Row>
-
-        
-      </Form>
     </div>
   )
 }

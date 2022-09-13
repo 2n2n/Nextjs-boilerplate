@@ -62,7 +62,7 @@ const EmployeePage: NextPage = () => {
       </Sider>
       <Layout>
         <Content style={{ padding: '20px' }}>
-          {/* <Row gutter={10}>
+          <Row gutter={10}>
             <Col span={5}>
               <Image
                 width={250}
@@ -75,8 +75,8 @@ const EmployeePage: NextPage = () => {
             <Col span={19}>
               <Table dataSource={employees} columns={columns} />{' '}
             </Col>
-          </Row> */}
-          <FormTest />
+          </Row>
+         
         </Content>
       </Layout>
     </>
