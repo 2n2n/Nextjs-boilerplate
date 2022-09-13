@@ -1,6 +1,6 @@
 import { EmployeeLeave, LeaveEnum } from '../types/types'
 
-const leaveData: EmployeeLeave[] = [
+export const leaveData: EmployeeLeave[] = [
   {
     employeeId: 1,
     leave: [
@@ -38,7 +38,7 @@ export const getLeaveCredits = () => {
 export const getLeaveById: (id: number) => Promise<EmployeeLeave> = (id) => {
   return new Promise((resolve, reject) => {
     const found = leaveData.find(
-      (employeeLeave) => employeeLeave.employeeId == id
+      (employeeLeave) => employeeLeave.employeeId === id
     )
     setTimeout(() => {
       resolve(found as EmployeeLeave)
