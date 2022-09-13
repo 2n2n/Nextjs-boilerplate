@@ -6,7 +6,7 @@ import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
 import SchedulingComponent from '../../components/schedulingComponent'
-
+import SidePanel from '../../components/sidePanel'
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
   const router = useRouter()
@@ -23,11 +23,11 @@ const EmployeePage: NextPage = () => {
         <Col span={5}>
           <SchedulingComponent />
         </Col>
-        <Col span={18}>
+        <Col span={17}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid impedit at vero eveniet alias asperiores doloribus placeat modi quisquam explicabo officia quaerat nobis veniam aperiam repudiandae similique expedita, pariatur repellat.
         </Col>
-        <Col span={1}>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut possimus error corrupti tempora ipsa aliquid, perspiciatis velit quo quas, asperiores inventore doloremque dicta magni voluptate, at animi amet earum consequuntur!
+        <Col span={2}>
+          <SidePanel />
         </Col>
       </Row>
     </Form>
