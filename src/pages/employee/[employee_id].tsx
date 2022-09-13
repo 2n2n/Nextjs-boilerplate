@@ -1,4 +1,4 @@
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, Radio, Space, Row, Col } from 'antd'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -7,6 +7,8 @@ import { EmployeeAvatar, EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
 import { UploadComponent } from '../../components/upload'
 
+import SchedulingComponent from '../../components/schedulingComponent'
+import SidePanel from '../../components/sidePanel'
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
   const router = useRouter()
@@ -18,19 +20,20 @@ const EmployeePage: NextPage = () => {
   }, [router.query.employee_id])
 
   return (
-    <>
-    {/* {JSON.stringify(data)} */}
-      <div style={{ padding: '20px' }}>
-        <Form onFinish={(values) => console.log('@onFinish', values)}>
-          {/* <Form.Item label="name" name="name">
-            <Input />
-          </Form.Item> */}
-          {/* <SubComponent /> */}
-          {/* <Button htmlType="submit">Submit</Button> */}
+    <Form onFinish={(values) => console.log('@onFinish', values)}>
+      <Row gutter={10} style={{ padding: '20px' }}>
+        <Col span={5}>
           <UploadComponent employeeId={data?.employeeId}/>
-        </Form>
-      </div>
-    </>
+          <SchedulingComponent />
+        </Col>
+        <Col span={17}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid impedit at vero eveniet alias asperiores doloribus placeat modi quisquam explicabo officia quaerat nobis veniam aperiam repudiandae similique expedita, pariatur repellat.
+        </Col>
+        <Col span={2}>
+          <SidePanel />
+        </Col>
+      </Row>
+    </Form>
   )
 }
 export default EmployeePage
