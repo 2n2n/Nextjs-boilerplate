@@ -5,7 +5,7 @@ import { Layout, Table, Col, Row, Button } from 'antd'
 import { useEffect, useState } from 'react'
 import { Employee, EmployeeModel, GenderEnum } from '../../types/types'
 import { getEmployees } from '../../http-request/employee.request'
-import ActionBar from '../../components/actionbar'
+import ActionBar from '../../components/actionbars'
 
 const { Sider, Content } = Layout
 
