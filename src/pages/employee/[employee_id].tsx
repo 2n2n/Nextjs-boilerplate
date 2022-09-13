@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
+import { UploadComponent } from '../../components/uploadComponent/Upload'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
@@ -27,6 +28,7 @@ const EmployeePage: NextPage = () => {
             <Input />
           </Form.Item>
           <SubComponent />
+          <UploadComponent data={data} />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
