@@ -10,7 +10,7 @@ import {
 import { info } from 'console'
 import Image from 'next/image'
 import { ReactFragment, useState } from 'react'
-import { EmployeeModel } from '../types/types'
+import { EmployeeModel } from '../../types/types'
 
 export const UploadComponent: React.FC<{ data: EmployeeModel }> = ({
   data,

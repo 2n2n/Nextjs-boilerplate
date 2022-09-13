@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
-import { UploadComponent } from '../../components/upload'
+import { UploadComponent } from '../../components/uploadComponent/Upload'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
