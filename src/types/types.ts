@@ -13,3 +13,19 @@ export type EmployeeModel = Employee & {
   photo?: string
   id: number
 }
+
+export type Leave = {
+  leaveType: LeaveEnum
+  creditBalance: number
+}
+
+export enum LeaveEnum {
+  SL = 'Sick Leave',
+  SLP = 'Special Leave',
+  VL = 'Vacation Leave',
+}
+
+export type EmployeeLeave = {
+  employeeId: number
+  leave: Leave[]
+}
