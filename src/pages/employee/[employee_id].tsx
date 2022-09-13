@@ -1,4 +1,4 @@
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, Skeleton } from 'antd'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
