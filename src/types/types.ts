@@ -9,6 +9,8 @@ export type Employee = {
 }
 
 export type EmployeeModel = Employee & {
+  employeeId?: string
+  photo?: string
   id: number
 }
 

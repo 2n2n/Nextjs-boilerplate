@@ -1,4 +1,4 @@
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, Skeleton } from 'antd'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -7,6 +7,7 @@ import { EmployeeModel, EmployeeLeave } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
 import { Layout, Table, Col, Row } from 'antd'
 import { getLeaveCreditsByEmployeeId } from '../../http-request/leave.request'
+import { UploadComponent } from '../../components/uploadComponent/Upload'
 
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
@@ -34,6 +35,9 @@ const EmployeePage: NextPage = () => {
     })
   }, [])
 
+  if (!data) {
+    return <Skeleton />
+  }
   return (
     <>
       <div style={{ padding: '20px' }}>
@@ -42,6 +46,7 @@ const EmployeePage: NextPage = () => {
             <Input />
           </Form.Item>
           <SubComponent />
+          <UploadComponent data={data} />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
