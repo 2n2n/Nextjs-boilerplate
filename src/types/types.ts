@@ -1,13 +1,15 @@
 export enum GenderEnum {
-    Male = 'Male',
-    Female = 'Female'
+  Male = 'Male',
+  Female = 'Female',
 }
 export type Employee = {
-    name: string;
-    position: string;
-    gender: GenderEnum
+  name: string
+  position: string
+  gender: GenderEnum
 }
 
-export type EmployeeModel = Employee & { 
-    id: number
+export type EmployeeModel = Employee & {
+  employeeId?: string
+  photo?: string
+  id: number
 }

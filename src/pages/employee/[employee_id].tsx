@@ -1,12 +1,12 @@
-import { Form, Input, Button, Radio, Space, Row, Col } from 'antd'
+import { Form, Input, Button, Skeleton } from 'antd'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getEmployeeById } from '../../http-request/employee.request'
 import { EmployeeModel } from '../../types/types'
 import SubComponent from '../../components/subcomponent'
-import SchedulingComponent from '../../components/schedulingComponent'
-import SidePanel from '../../components/sidePanel'
+import { UploadComponent } from '../../components/uploadComponent/Upload'
+
 const EmployeePage: NextPage = () => {
   const [data, setData] = useState<EmployeeModel>()
   const router = useRouter()
@@ -15,22 +15,24 @@ const EmployeePage: NextPage = () => {
     const employee_id = router.query.employee_id
     const id = parseInt(employee_id as string)
     getEmployeeById(id).then((e: EmployeeModel) => setData(e))
-  }, [])
+  }, [router.query.employee_id])
 
+  if (!data) {
+    return <Skeleton />
+  }
   return (
-    <Form onFinish={(values) => console.log('@onFinish', values)}>
-      <Row gutter={10} style={{ padding: '20px' }}>
-        <Col span={5}>
-          <SchedulingComponent />
-        </Col>
-        <Col span={17}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid impedit at vero eveniet alias asperiores doloribus placeat modi quisquam explicabo officia quaerat nobis veniam aperiam repudiandae similique expedita, pariatur repellat.
-        </Col>
-        <Col span={2}>
-          <SidePanel />
-        </Col>
-      </Row>
-    </Form>
+    <>
+      <div style={{ padding: '20px' }}>
+        <Form onFinish={(values) => console.log('@onFinish', values)}>
+          <Form.Item label="name" name="name">
+            <Input />
+          </Form.Item>
+          <SubComponent />
+          <UploadComponent data={data} />
+          <Button htmlType="submit">Submit</Button>
+        </Form>
+      </div>
+    </>
   )
 }
 export default EmployeePage
